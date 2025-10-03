@@ -16,6 +16,9 @@ func TestGetGradeA(t *testing.T) {
 	if expected_value != actual_value {
 		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
 	}
+	if !gradeCalculator.isPassing {
+		t.Errorf("Expected gradeCalculator.isPassing to be '%t'; got '%t' instead", true, gradeCalculator.isPassing)
+	}
 }
 
 func TestGetGradeB(t *testing.T) {
@@ -31,6 +34,9 @@ func TestGetGradeB(t *testing.T) {
 
 	if expected_value != actual_value {
 		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
+	}
+	if !gradeCalculator.isPassing {
+		t.Errorf("Expected gradeCalculator.isPassing to be '%t'; got '%t' instead", true, gradeCalculator.isPassing)
 	}
 }
 
@@ -48,6 +54,9 @@ func TestGetGradeC(t *testing.T) {
 	if expected_value != actual_value {
 		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
 	}
+	if !gradeCalculator.isPassing {
+		t.Errorf("Expected gradeCalculator.isPassing to be '%t'; got '%t' instead", true, gradeCalculator.isPassing)
+	}
 }
 func TestGetGradeD(t *testing.T) {
 	expected_value := "D"
@@ -62,6 +71,9 @@ func TestGetGradeD(t *testing.T) {
 
 	if expected_value != actual_value {
 		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
+	}
+	if gradeCalculator.isPassing {
+		t.Errorf("Expected gradeCalculator.isPassing to be '%t'; got '%t' instead", false, gradeCalculator.isPassing)
 	}
 }
 
@@ -78,6 +90,9 @@ func TestGetGradeF(t *testing.T) {
 
 	if expected_value != actual_value {
 		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
+	}
+	if gradeCalculator.isPassing {
+		t.Errorf("Expected gradeCalculator.isPassing to be '%t'; got '%t' instead", false, gradeCalculator.isPassing)
 	}
 }
 
